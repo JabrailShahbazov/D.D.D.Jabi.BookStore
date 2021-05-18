@@ -5,4 +5,4 @@ var gulp = require("gulp"),
     copyResources = require('./node_modules/@abp/aspnetcore.mvc.ui/gulp/copy-resources.js');
 exports.default = function(){
     return copyResources(path.resolve('./'));
-};
+}; 
