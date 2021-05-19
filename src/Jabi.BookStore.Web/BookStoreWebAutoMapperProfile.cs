@@ -17,7 +17,7 @@ namespace Jabi.BookStore.Web
 
             CreateMap<Pages.Books.CreateModalModel.CreateBookViewModel, CreateUpdateBookDto>();
             CreateMap<BookDto, Pages.Books.EditModalModel.EditBookViewModel>();
-            CreateMap<Pages.Books.EditModalModel.EditBookViewModel, CreateUpdateBookDto>();
+            CreateMap<Pages.Books.EditModalModel.EditBookViewModel, UpdateBookDto>();
         }
     }
 }

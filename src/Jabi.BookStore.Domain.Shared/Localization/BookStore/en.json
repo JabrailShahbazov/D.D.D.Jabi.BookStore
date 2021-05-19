@@ -2,6 +2,20 @@
   "culture": "en",
   "texts": {
     "Menu:Home": "Home",
+    "Menu:BookStore": "BookStore",
+    "Menu:Books": "Books",
+    "Menu:Authors": "Authors",
+    "Enum:BookType:0": "Undefined",
+    "Enum:BookType:1": "Adventure",
+    "Enum:BookType:2": "Biography",
+    "Enum:BookType:3": "Dystopia",
+    "Enum:BookType:4": "Fantastic",
+    "Enum:BookType:5": "Horror",
+    "Enum:BookType:6": "Science",
+    "Enum:BookType:7": "Science fiction",
+    "Enum:BookType:8": "Poetry",
+
+    "AuthorDeletionConfirmationMessage": "Your books will be deleted when the '{0}' is deleted ",
     "Welcome": "Welcome",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
   }

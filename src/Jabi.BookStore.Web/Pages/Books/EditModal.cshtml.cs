@@ -31,17 +31,14 @@ namespace Jabi.BookStore.Web.Pages.Books
             var bookDto = await _bookAppService.GetAsync(id);
             Book = ObjectMapper.Map<BookDto, EditBookViewModel>(bookDto);
 
-            var authorLookup = await _bookAppService.GetAuthorLookupAsync();
-            Authors = authorLookup.Items
-                .Select(x => new SelectListItem(x.Name, x.Id.ToString()))
-                .ToList();
+           
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             await _bookAppService.UpdateAsync(
                 Book.Id,
-                ObjectMapper.Map<EditBookViewModel, CreateUpdateBookDto>(Book)
+                ObjectMapper.Map<EditBookViewModel, UpdateBookDto>(Book)
             );
 
             return NoContent();
@@ -51,18 +48,6 @@ namespace Jabi.BookStore.Web.Pages.Books
         {
             [HiddenInput]
             public int Id { get; set; }
-
-            [SelectItems(nameof(Authors))]
-            [DisplayName("Author")]
-            public int AuthorId { get; set; }
-
-            [Required]
-            [StringLength(128)]
-            public string Name { get; set; }
-
-            [Required]
-            public BookType Type { get; set; } = BookType.Undefined;
-
             [Required]
             [DataType(DataType.Date)]
             public DateTime PublishDate { get; set; } = DateTime.Now;
